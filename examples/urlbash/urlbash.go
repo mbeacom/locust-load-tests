@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/myzhan/boomer"
 	"net/http"
 )
@@ -13,7 +14,12 @@ func urlBash() {
 
 	elapsed := boomer.Now() - start
 
-	boomer.Events.Publish(resp.Status, "http", "urlBash", elapsed, int64(10))
+	if resp.StatusCode == 200 {
+		boomer.Events.Publish("request_success", "http", "urlBash", elapsed, int64(10))
+	} else {
+		boomer.Events.Publish("request_failure", "http", "urlBash", elapsed, int64(10))
+	}
+
 }
 
 func main() {
