@@ -27,12 +27,17 @@ $ brew install go
 Explicitly set $GOPATH in a shell initialisation file.
 ```
 $ export GOPATH=$HOME/go
-$ export PATH=$HOME/go/bin  # append to your current path
+$ export PATH=$PATH:$HOME/go/bin
 ```
 
 ### Boomer
 ```
 $ go get github.com/myzhan/boomer
+```
+
+### Load Tests
+```
+$ go get github.com/bbc/locust-load-tests
 ```
 
 Dummy Master
@@ -65,3 +70,8 @@ $ go run server.go
 $ open http://localhost:8089
 ```
 Set number of users, hatch rate and swarm
+
+Performance
+-----------
+Although, Locust is not a tool for URL bashing, I've attempted a large number of
+rquests against a local web Go server.
