@@ -58,6 +58,10 @@ $ ./a.out --master-host=127.0.0.1 --master-port=5557 --rpc=zeromq
 Test
 ----
 ```
+$ go run server.go
+```
+
+```
 $ open http://localhost:8089
 ```
 Set number of users, hatch rate and swarm

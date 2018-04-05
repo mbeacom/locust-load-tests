@@ -14,11 +14,14 @@ func urlBash() {
 
 	elapsed := boomer.Now() - start
 
+	var result string
 	if resp.StatusCode == 200 {
-		boomer.Events.Publish("request_success", "http", "urlBash", elapsed, int64(10))
+		result = "request_success"
 	} else {
-		boomer.Events.Publish("request_failure", "http", "urlBash", elapsed, int64(10))
+		result = "request_failure"
 	}
+
+	boomer.Events.Publish(result, "http", "urlBash", elapsed, int64(10))
 
 }
 
