@@ -35,11 +35,6 @@ $ export PATH=$PATH:$HOME/go/bin
 $ go get github.com/myzhan/boomer
 ```
 
-### Load Tests
-```
-$ go get github.com/bbc/locust-load-tests
-```
-
 Dummy Master
 ------------
 A dummy master script needs to be invoked in order for a custom slave to send
@@ -48,8 +43,16 @@ metrics to it.
 $ locust -f dummy.py --master --master-bind-host=127.0.0.1 --master-bind-port=5557
 ```
 
-Build 
+Example
 ------
+We are going to run a local Go server and bash it with the Go driver
+
+Change directory to **server**.
+```
+$ go run server.go
+```
+
+In **examples/urlbash**
 ```
 $ go build -o a.out main.go
 ```
@@ -61,11 +64,6 @@ $ ./a.out --master-host=127.0.0.1 --master-port=5557 --rpc=zeromq
 ```
 
 Test
-----
-```
-$ go run server.go
-```
-
 ```
 $ open http://localhost:8089
 ```
@@ -73,5 +71,5 @@ Set number of users, hatch rate and swarm
 
 Performance
 -----------
-Although, Locust is not a tool for URL bashing, I've attempted a large number of
-rquests against a local web Go server.
+I found a widely fluctuating ramp-up with the Go driver.
+This, as well as only a linear ramp-up, puts this PoC on hold.
