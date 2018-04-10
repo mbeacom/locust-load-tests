@@ -1,11 +1,11 @@
 package main
 
 import (
+	"github.com/myzhan/boomer"
 	"log"
 	"net/http"
 	"strconv"
-
-	"github.com/myzhan/boomer"
+	"time"
 )
 
 func urlBash() {
@@ -25,6 +25,8 @@ func urlBash() {
 	} else {
 		boomer.Events.Publish("request_failure", "http", "urlBash", elapsed, strconv.Itoa(response.StatusCode))
 	}
+
+	time.Sleep(1 * time.Second)
 
 }
 
