@@ -72,7 +72,7 @@ Set number of users, hatch rate and swarm
 Performance
 -----------
 I found a widely fluctuating ramp-up with the Go driver. I would also expect
-the user rate to increment up to the specified user rate. I have raised [an
+the hatch rate to increment to the specified user rate. I have raised [an
 issue](https://github.com/myzhan/boomer/issues/23)
 
 We would also need to add a [non-linear ramp-up in
