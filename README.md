@@ -71,5 +71,9 @@ Set number of users, hatch rate and swarm
 
 Performance
 -----------
-I found a widely fluctuating ramp-up with the Go driver.
-This, as well as only a linear ramp-up, puts this PoC on hold.
+I found a widely fluctuating ramp-up with the Go driver. I would also expect
+the user rate to increment up to the specified user rate. I have raised [an
+issue](https://github.com/myzhan/boomer/issues/23)
+
+We would also need to add a [non-linear ramp-up in
+Locust](https://github.com/locustio/locust/issues/765)
