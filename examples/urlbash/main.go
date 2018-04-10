@@ -1,16 +1,21 @@
 package main
 
 import (
-	"github.com/myzhan/boomer"
+	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/myzhan/boomer"
 )
 
 func urlBash() {
 	start := boomer.Now()
 
 	localServer := "http://localhost:8080"
-	response, _ := http.Get(localServer)
+	response, err := http.Get(localServer)
+	if err != nil {
+		log.Fatalf("%v\n", err)
+	}
 
 	elapsed := boomer.Now() - start
 
