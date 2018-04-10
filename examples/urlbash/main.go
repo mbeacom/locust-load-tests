@@ -16,6 +16,7 @@ func urlBash() {
 	if err != nil {
 		log.Fatalf("%v\n", err)
 	}
+	defer response.Body.Close()
 
 	elapsed := boomer.Now() - start
 
@@ -33,6 +34,7 @@ func main() {
 		Name: "urlBash",
 		Fn:   urlBash,
 	}
+	http.DefaultTransport.(*http.Transport).MaxIdleConnsPerHost = 2000
 
 	boomer.Run(task)
 }
