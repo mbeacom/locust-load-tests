@@ -71,9 +71,9 @@ Set number of users, hatch rate and swarm
 
 Performance
 -----------
-I found a widely fluctuating ramp-up with the Go driver. I would also expect
+I found an irregular request rate and I would expect
 the hatch rate to increment to the specified user rate. I have raised [an
-issue](https://github.com/myzhan/boomer/issues/23)
+issue](https://github.com/myzhan/boomer/issues/23).
 
 We would also need to add a [non-linear ramp-up in
 Locust](https://github.com/locustio/locust/issues/765)
