@@ -67,4 +67,15 @@ Test
 ```
 $ open http://localhost:8089
 ```
-Set number of users, hatch rate and swarm
+Set **10** users with a hatch rate of *1* and watch the requests swarm.
+
+Requests per second
+-------------------
+If you would like to set requests per second add a one second delay.
+
+```go
+import "time"
+
+time.Sleep(1 * time.Second)
+
+```
